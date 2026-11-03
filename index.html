@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Guneet Kaur! 🎂</title>
+<style>
+:root{--pink:#ff7eb6;--purple:#a78bfa;--cream:#fff8fc}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#51334f;background:radial-gradient(circle at top left,#ffe0ef,transparent 45%),linear-gradient(135deg,#fff7fb,#f2eaff);overflow-x:hidden}
+main{min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{max-width:650px;width:100%;text-align:center;background:#ffffffd9;backdrop-filter:blur(12px);border:1px solid #fff;border-radius:28px;padding:clamp(25px,6vw,48px);box-shadow:0 20px 60px #9c6e9b24;position:relative;z-index:2}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.75rem;color:#b05d91;font-weight:700}
+h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.05;margin:14px 0;color:#a34d85}
+h1 span{display:block;color:#8061c9}
+.subtitle{font-size:1.08rem;line-height:1.7;max-width:480px;margin:18px auto;color:#735c75}
+button{border:0;border-radius:999px;padding:14px 24px;font-size:1rem;font-weight:700;color:white;background:linear-gradient(100deg,#ff7eb6,#9b7bea);box-shadow:0 8px 20px #bd83c444;cursor:pointer;margin-top:14px}
+button:hover{transform:translateY(-2px)}
+#surprise{display:none;margin-top:24px;padding:20px;border-radius:18px;background:#fff0f8;line-height:1.8;animation:pop .5s ease}
+.cake{font-size:5rem;margin:10px 0;animation:bob 2s ease-in-out infinite}
+.footer{margin-top:28px;font-size:.8rem;color:#ad8ba8}
+.heart{position:fixed;bottom:-40px;z-index:1;animation:floatUp linear infinite;opacity:.7;pointer-events:none}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<div class="eyebrow">A little birthday magic ✨ · 4 November</div>
+<div class="cake">🎂</div>
+<h1>Happy Birthday <span>Guneet Kaur!</span></h1>
+<p class="subtitle">Hope your day is filled with smiles, sweet surprises, good vibes, and all the happiness you deserve. Keep being your wonderful self! 💗</p>
+<button id="openBtn" onclick="openSurprise()">Tap for a little surprise 🎁</button>
+<div id="surprise">
+<strong>Birthday wishes, Guneet! 🥳</strong><br>
+May this new year of your life bring you beautiful memories, exciting adventures, success in everything you do, and people who make you laugh a little louder.<br>
+And yes… today, cake calories don't count. 😌🍰
+</div>
+<div class="footer">Made with a little friendship & lots of birthday vibes 💫</div>
+</section>
+</main>
+<script>
+function open_surprise(){}
+function openSurprise(){
+ const s=document.getElementById('surprise');
+ s.style.display='block';
+ document.getElementById('openBtn').textContent='Surprise unlocked 💖';
+ for(let i=0;i<24;i++){
+   const e=document.createElement('div');e.className='heart';e.textContent=['💖','🎉','✨','💗','🎈'][Math.floor(Math.random()*5)];
+   e.style.left=Math.random()*100+'vw';e.style.animationDuration=(4+Math.random()*4)+'s';e.style.fontSize=(16+Math.random()*22)+'px';
+   document.body.appendChild(e);setTimeout(()=>e.remove(),8000);
+ }
+}
+</script>
+</body>
+</html>
